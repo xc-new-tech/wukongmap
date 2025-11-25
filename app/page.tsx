@@ -39,16 +39,16 @@ export default function HomePage() {
       </header>
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-12 space-y-12">
+      <main className="container mx-auto px-4 py-8 md:py-12 space-y-8 md:space-y-12 max-w-7xl">
         {/* Hero Section */}
         <section className="text-center space-y-4 mb-8">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
             让学习变得
             <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
               {' '}简单有趣
             </span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto px-4">
             输入任何知识点，AI 将为你生成图文并茂的学习卡片，帮助你更好地理解和记忆
           </p>
         </section>

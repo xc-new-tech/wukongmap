@@ -10,33 +10,34 @@ interface KnowledgeCardProps {
 
 export function KnowledgeCard({ card }: KnowledgeCardProps) {
   return (
-    <Card className="w-full max-w-4xl mx-auto overflow-hidden">
-      <CardHeader>
-        <CardTitle className="text-2xl">{card.title}</CardTitle>
+    <Card className="w-full max-w-4xl mx-auto overflow-hidden shadow-lg">
+      <CardHeader className="px-4 sm:px-6">
+        <CardTitle className="text-xl sm:text-2xl md:text-3xl">{card.title}</CardTitle>
         <div className="flex flex-wrap gap-2 mt-2">
           {card.tags.map((tag, index) => (
             <span
               key={index}
-              className="px-3 py-1 text-xs font-medium bg-purple-100 text-purple-700 rounded-full"
+              className="px-2 sm:px-3 py-1 text-xs font-medium bg-purple-100 text-purple-700 rounded-full"
             >
               {tag}
             </span>
           ))}
         </div>
       </CardHeader>
-      <CardContent className="space-y-6">
+      <CardContent className="space-y-4 sm:space-y-6 px-4 sm:px-6">
         {card.image_url ? (
-          <div className="relative w-full h-64 md:h-96 bg-gray-100 rounded-lg overflow-hidden">
+          <div className="relative w-full h-48 sm:h-64 md:h-80 lg:h-96 bg-gray-100 rounded-lg overflow-hidden">
             <Image
               src={card.image_url}
               alt={card.title}
               fill
               className="object-cover"
               unoptimized
+              sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, (max-width: 1024px) 80vw, 1024px"
             />
           </div>
         ) : (
-          <div className="w-full p-6 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg border-2 border-dashed border-purple-200">
+          <div className="w-full p-4 sm:p-6 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg border-2 border-dashed border-purple-200">
             <div className="text-center text-gray-500">
               <p className="text-sm">💡 未生成配图（节省成本）</p>
               <p className="text-xs mt-1">如需配图，请勾选&ldquo;生成配图&rdquo;选项</p>
