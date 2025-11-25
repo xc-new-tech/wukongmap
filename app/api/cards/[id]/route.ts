@@ -31,7 +31,7 @@ export async function GET(
     await supabase
       .from('cards')
       .update({ view_count: (card.view_count || 0) + 1 })
-      .eq('id', params.id)
+      .eq('id', id)
 
     return NextResponse.json<ApiResponse>(
       {
