@@ -39,7 +39,7 @@ export function KnowledgeCard({ card }: KnowledgeCardProps) {
           <div className="w-full p-6 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg border-2 border-dashed border-purple-200">
             <div className="text-center text-gray-500">
               <p className="text-sm">💡 未生成配图（节省成本）</p>
-              <p className="text-xs mt-1">如需配图，请勾选"生成配图"选项</p>
+              <p className="text-xs mt-1">如需配图，请勾选&ldquo;生成配图&rdquo;选项</p>
             </div>
           </div>
         )}

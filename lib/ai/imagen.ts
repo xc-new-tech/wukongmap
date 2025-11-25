@@ -16,15 +16,15 @@ export async function generateImage(prompt: string): Promise<string> {
           content: optimizedPrompt,
         },
       ],
-      // @ts-ignore - OpenRouter 特有参数
+      // @ts-expect-error - OpenRouter 特有参数
       modalities: ['image', 'text'],
     })
 
     const message = response.choices[0]?.message
 
-    // @ts-ignore - OpenRouter 返回的 images 字段
+    // @ts-expect-error - OpenRouter 返回的 images 字段
     if (message?.images && message.images.length > 0) {
-      // @ts-ignore
+      // @ts-expect-error - OpenRouter images 字段
       const imageUrl = message.images[0].image_url?.url
       if (imageUrl) {
         console.log('图片生成成功，格式:', imageUrl.substring(0, 30))
